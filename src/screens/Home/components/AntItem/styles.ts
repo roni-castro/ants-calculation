@@ -5,13 +5,14 @@ export const styles = StyleSheet.create({
     padding: 8,
     alignItems: 'center',
     borderRadius: 4,
-    borderWidth: 1
+    borderWidth: 1,
+    gap: 4,
   },
   infoContainer: {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-around',
-      gap: 8,
+
       marginTop: 4
   },
   title: {

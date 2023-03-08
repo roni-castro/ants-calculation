@@ -1,3 +1,7 @@
 import {Ant} from '@apiTypes/ants'
 
-export interface AntItemProps extends Ant {}
+type AntStatus = 'Not ready' | 'In progress' | 'All calculated'
+
+export interface AntItemProps extends Ant {
+  status: AntStatus
+}

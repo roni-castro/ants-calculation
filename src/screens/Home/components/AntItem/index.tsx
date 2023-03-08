@@ -10,31 +10,30 @@ const ColorsMap = {
   SILVER: Colors.silver
 }
 
-const SizeIncrease = 2
-
-export default function AntItem({name, length, color, weight}: AntItemProps) {
+export default function AntItem({
+  name,
+  length,
+  color,
+  weight,
+  status
+}: AntItemProps) {
   const stylesDynamic = StyleSheet.create({
     text: {
+      textAlign: 'center',
       fontSize: 14,
       color: ColorsMap[color] || ColorsMap.BLACK
-    },
-
-    circle: {
-      width: length * SizeIncrease,
-      height: weight * SizeIncrease,
-      borderRadius: length
     }
   })
 
   return (
     <View style={styles.container}>
-      <View style={stylesDynamic.circle}></View>
       <Text style={[stylesDynamic.text, styles.title]}>{name}</Text>
       <View style={styles.infoContainer}>
         <Text style={stylesDynamic.text}>{`Weight: ${weight}`}</Text>
-        <Text style={stylesDynamic.text}>{`Length: ${weight}`}</Text>
+        <Text style={stylesDynamic.text}>{`Length: ${length}`}</Text>
         <Text style={stylesDynamic.text}>{`Color: ${color}`}</Text>
       </View>
+      <Text style={stylesDynamic.text}>{`Status: ${status}`}</Text>
     </View>
   )
 }
