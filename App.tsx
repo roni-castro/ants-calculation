@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {StatusBar} from 'expo-status-bar'
+import {store} from '@redux/store'
+import {Provider} from 'react-redux'
+import {ApiProvider} from '@reduxjs/toolkit/dist/query/react'
+import Home from '@screens/Home'
+import {antsApi} from '@services/ants'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <>
+      <StatusBar style='auto' />
+      <Provider store={store}>
+        <ApiProvider api={antsApi}>
+          <Home />
+        </ApiProvider>
+      </Provider>
+    </>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
