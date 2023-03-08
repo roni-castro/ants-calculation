@@ -6,14 +6,13 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 4,
     borderWidth: 1,
-    gap: 4,
+    gap: 8
   },
   infoContainer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-
-      marginTop: 4
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 8
   },
   title: {
     fontSize: 18,

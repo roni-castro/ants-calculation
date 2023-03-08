@@ -1,7 +1,7 @@
 import {Ant} from '@apiTypes/ants'
-
-type AntStatus = 'Not ready' | 'In progress' | 'All calculated'
+import {AntCalculationStatus} from '@redux/antsCalculation/types'
 
 export interface AntItemProps extends Ant {
-  status: AntStatus
+  status: AntCalculationStatus
+  winLikelihood: number
 }

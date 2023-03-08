@@ -8,6 +8,9 @@ export const styles = StyleSheet.create({
     padding: 8,
     borderRadius: 4
   },
+  containerDisabled: {
+    backgroundColor: Colors.silver
+  },
   text: {
     color: Colors.white,
     textAlign: 'center'

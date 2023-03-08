@@ -3,11 +3,15 @@ import {Text, TouchableOpacity} from 'react-native'
 import {ButtonProps} from './types'
 import {styles} from './styles'
 
-export default function Button({children, ...restProps}: ButtonProps) {
+export default function Button({
+  children,
+  disabled,
+  ...restProps
+}: ButtonProps) {
   return (
     <TouchableOpacity
-      activeOpacity={0.8}
-      style={styles.container}
+      disabled={disabled}
+      style={[styles.container, disabled && styles.containerDisabled]}
       {...restProps}
     >
       <Text style={styles.text}>{children}</Text>

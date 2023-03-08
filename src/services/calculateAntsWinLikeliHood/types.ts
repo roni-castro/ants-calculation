@@ -1,5 +1,9 @@
 export interface CalculateAntsWinLikeliHoodParams {
   numberOfAnts: number
-  onAntCalculation: (values: {index: number; winLikelihood: number}) => void
-  onEndAllCalculations: () => void
+  onFinishAllCalculations: () => void
+  onStartAntCalculation: (index: number) => void
+  onFinishAntCalculation: (values: {
+    index: number
+    winLikelihood: number
+  }) => void
 }

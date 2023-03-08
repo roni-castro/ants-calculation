@@ -1,3 +1,4 @@
+import {AntCalculationStatus} from '@redux/antsCalculation/types'
 import {Colors} from '@theme/tokens'
 import React from 'react'
 import {Text, View, StyleSheet} from 'react-native'
@@ -10,12 +11,23 @@ const ColorsMap = {
   SILVER: Colors.silver
 }
 
+const formatWinLikelihood = (
+  winLikelihood: number,
+  status: AntCalculationStatus
+) => {
+  if (winLikelihood === undefined || status === AntCalculationStatus.InProgress)
+    return '-'
+  const roundedWinLikelihood = (winLikelihood * 100).toFixed(2)
+  return `${roundedWinLikelihood}%`
+}
+
 export default function AntItem({
   name,
   length,
   color,
   weight,
-  status
+  status,
+  winLikelihood
 }: AntItemProps) {
   const stylesDynamic = StyleSheet.create({
     text: {
@@ -34,6 +46,11 @@ export default function AntItem({
         <Text style={stylesDynamic.text}>{`Color: ${color}`}</Text>
       </View>
       <Text style={stylesDynamic.text}>{`Status: ${status}`}</Text>
+
+      <Text style={stylesDynamic.text}>{`Win likelihood: ${formatWinLikelihood(
+        winLikelihood,
+        status
+      )}`}</Text>
     </View>
   )
 }
