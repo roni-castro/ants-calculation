@@ -24,6 +24,6 @@ npm run android
 
 ### ScreenShot
 
-![Calculations not run](./screenshots/not-run.png 'Title')
-![Calculations in progress](./screenshots/in-progress.png 'Title')
-![Calculations finished](./screenshots/finished-calculations.png 'Title')
+<img src="./screenshots/not-run.png" width="350" alt="Calculations not run" />
+<img src="./screenshots/in-progress.png" width="350" alt="Calculations in progress" />
+<img src="./screenshots/finished-calculations.png" width="350" alt="Calculations finished" />
